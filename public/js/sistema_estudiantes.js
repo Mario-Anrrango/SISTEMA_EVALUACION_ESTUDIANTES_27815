@@ -2,11 +2,7 @@ var nombres_estudiantes = ["Maria", "Juan", "Marco", "Rosa", "Felipe", "Daniela"
 var notas_estudiantes = [8, 4, 10, 6, 3, 9, 5, 7, 2];
 
 var btn_calcular = document.getElementById('btn_calcular');
-
-var aprobados = 0;
-var supletorios = 0;
-var reprobados = 0;
-var suma_total = 0;
+var btn_limpiar = document.getElementById('btn_limpiar');
 
 notas_estudiantes.forEach(function(nota, posicion) {
     let id_celda = "nota_" + nombres_estudiantes[posicion].toLowerCase();
@@ -15,6 +11,12 @@ notas_estudiantes.forEach(function(nota, posicion) {
 });
 
 btn_calcular.addEventListener('click', function() {
+
+    var aprobados = 0;
+    var supletorios = 0;
+    var reprobados = 0;
+    var suma_total = 0;
+    var promedio = 0;
 
     notas_estudiantes.forEach(function(nota){
     suma_total = suma_total + nota;  
@@ -27,7 +29,7 @@ btn_calcular.addEventListener('click', function() {
     }
     })
     
-    var promedio = suma_total / notas_estudiantes.length;
+    promedio = suma_total / notas_estudiantes.length;
 
     var estado = "";
     if (promedio >= 7) {
@@ -41,8 +43,15 @@ btn_calcular.addEventListener('click', function() {
     document.getElementById('total_aprobados').textContent = aprobados;
     document.getElementById('total_supletorios').textContent = supletorios;
     document.getElementById('total_reprobados').textContent = reprobados;
-    document.getElementById('promedio_curso').textContent = promedio.toFixed(2);
+    document.getElementById('promedio_curso').textContent = promedio;
     document.getElementById('estado_curso').textContent = estado;
     
-
 });
+
+btn_limpiar.addEventListener('click', function(){
+    document.getElementById('total_aprobados').textContent = '';
+    document.getElementById('total_supletorios').textContent = '';
+    document.getElementById('total_reprobados').textContent = '';
+    document.getElementById('promedio_curso').textContent = '';
+    document.getElementById('estado_curso').textContent = '';
+})
