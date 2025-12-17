@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Evaluación de Estudiantes</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-4">
+        <h1 class="text-center">SISTEMA DE EVALUACIÓN DE ESTUDIANTES</h1>
+        <hr>
+
+        <!-- Tabla de Estudiantes -->
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Estudiantes</th>
+                        <th>Maria</th>
+                        <th>Juan</th>
+                        <th>Marco</th>
+                        <th>Rosa</th>
+                        <th>Felipe</th>
+                        <th>Daniela</th>
+                        <th>Sofia</th>
+                        <th>Esteban</th>
+                        <th>Jose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="fila_notas">
+                        <th>Notas</th>
+                        <td id="nota_maria"></td>
+                        <td id="nota_juan"></td>
+                        <td id="nota_marco"></td>
+                        <td id="nota_rosa"></td>
+                        <td id="nota_felipe"></td>
+                        <td id="nota_daniela"></td>
+                        <td id="nota_sofia"></td>
+                        <td id="nota_esteban"></td>
+                        <td id="nota_jose"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr>
+
+        <!-- Resultados -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>Resultados por Categoría</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Aprobados (7-10): </strong><span id="total_aprobados">0</span></p>
+                        <p><strong>Supletorios (5-6): </strong><span id="total_supletorios">0</span></p>
+                        <p><strong>Reprobados (0-4): </strong><span id="total_reprobados">0</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h4>Promedio y Estado</h4>
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Promedio del curso: </strong><span id="promedio_curso">0.00</span></p>
+                        <p><strong>Estado del curso: </strong><span id="estado_curso">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón para calcular -->
+        <div class="d-grid gap-2">
+            <button
+                type="button"
+                name=""
+                id="btn_calcular"
+                class="btn btn-success btn-lg"
+            >
+                CALCULAR RESULTADOS
+            </button>
+        </div>
+        
+
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./public/js/sistema_estudiantes.js"></script>
+</body>
+</html>
